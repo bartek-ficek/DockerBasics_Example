@@ -1,0 +1,13 @@
+# openjdk downloaded from dockerhub here: first page: https://hub.docker.com/_/openjdk
+# and exact page here: https://github.com/docker-library/docs/blob/master/openjdk/README.md#supported-tags-and-respective-dockerfile-links
+FROM openjdk:11.0.9.1-jdk-buster
+
+#adding here my jar file which will be added to docker image
+#command "ADD" has two arguments: path to jar file and 'dot' means that path is taken from this catalogue
+ADD target/springboot-docker-0.0.1-SNAPSHOT.jar .
+
+#EXPOSE tells on which port, app can be reached. Port shared outside. Port to communication with docker container. It isn't the same as server.port in application.properties.
+EXPOSE 8000
+
+#CMD tells what command should be run after running the docker image
+CMD java -jar springboot-docker-0.0.1-SNAPSHOT.jar
