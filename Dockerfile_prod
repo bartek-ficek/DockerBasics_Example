@@ -10,4 +10,4 @@ ADD target/springboot-docker-0.0.1-SNAPSHOT.jar .
 EXPOSE 8000
 
 #CMD tells what command should be run after running the docker image
-CMD java -jar springboot-docker-0.0.1-SNAPSHOT.jar
+CMD java -jar springboot-docker-0.0.1-SNAPSHOT.jar --envname=prod

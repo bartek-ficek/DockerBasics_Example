@@ -7,7 +7,7 @@ FROM openjdk:11.0.9.1-jdk-buster
 ADD target/springboot-docker-0.0.1-SNAPSHOT.jar .
 
 #EXPOSE tells on which port, app can be reached. Port shared outside. Port to communication with docker container. It isn't the same as server.port in application.properties.
-EXPOSE 8000
+EXPOSE 7000
 
 #CMD tells what command should be run after running the docker image
-CMD java -jar springboot-docker-0.0.1-SNAPSHOT.jar
+CMD java -jar springboot-docker-0.0.1-SNAPSHOT.jar --envname=test
